@@ -2,13 +2,15 @@
 
 ## Descripción del Proyecto
 
-El objetivo de este proyecto es desarrollar un sistema de gestión de datos para Keepcoding, una plataforma de educación en línea. El proyecto se centra en el análisis de datos de llamadas de atención al cliente, utilizando técnicas avanzadas de SQL para extraer insights valiosos de los datos.
+El objetivo de este proyecto es primero desarrollar un diagrama entidad relación para posteriormente crear una base de datos en PostgreSQL.
+Luego el proyecto se centra en el análisis de datos de llamadas de atención al cliente, utilizando técnicas avanzadas de SQL para extraer insights valiosos de los datos utilizando Big Query.
 
 ## Instalación
 
 ### Requisitos
 - PostgreSQL como gestor de base de datos.
-- Un entorno de desarrollo integrado (IDE) como pgAdmin o DBeaver.
+- Un entorno de desarrollo integrado (IDE) como pgAdmin, DBeaver o TablePlus.
+- Consola de Big Query.
 - Los archivos de datos proporcionados (ivr_calls, ivr_modules, ivr_steps).
 
 ### Guía de Uso
@@ -18,19 +20,19 @@ El objetivo de este proyecto es desarrollar un sistema de gestión de datos para
    - Importa los archivos de datos proporcionados en la base de datos creada.
 
 2. **Crear la tabla `ivr_detail`**:
-   - Ejecuta el script de creación de la tabla `ivr_detail` (`create_ivr_detail.sql`) en tu gestor de base de datos.
+   - Ejecuta el script de creación de la tabla `ivr_detail` (`create_ivr_detail.sql`) en consola big query.
    - Verifica que la tabla se haya creado correctamente y contiene los campos solicitados.
 
 3. **Generar campos adicionales**:
-   - Ejecuta los scripts de generación de campos adicionales (`generate_vdn_aggregation.sql`, `generate_document_type.sql`, etc.) en tu gestor de base de datos.
+   - Ejecuta los scripts de generación de campos adicionales (`generate_vdn_aggregation.sql`, `generate_document_type.sql`, etc.).
    - Verifica que los campos se hayan generado correctamente y se encuentren en la tabla `ivr_detail`.
 
 4. **Crear la tabla `ivr_summary`**:
-   - Ejecuta el script de creación de la tabla `ivr_summary` (`create_ivr_summary.sql`) en tu gestor de base de datos.
+   - Ejecuta el script de creación de la tabla `ivr_summary` (`create_ivr_summary.sql`).
    - Verifica que la tabla se haya creado correctamente y contiene los campos solicitados.
 
 5. **Uso de la función de limpieza de enteros**:
-   - Ejecuta el script de creación de la función de limpieza de enteros (`create_clean_integer_function.sql`) en tu gestor de base de datos.
+   - Ejecuta el script de creación de la función de limpieza de enteros (`create_clean_integer_function.sql`).
    - Utiliza la función en tus consultas para limpiar valores nulos y reemplazarlos por `-999999`.
 
 ## Guía de Contribución
@@ -52,3 +54,4 @@ El objetivo de este proyecto es desarrollar un sistema de gestión de datos para
 ## Recursos Adicionales
 - [Documentación de PostgreSQL](https://www.postgresql.org/docs/)
 - [Documentación de SQL](https://www.w3schools.com/sql/)
+  
